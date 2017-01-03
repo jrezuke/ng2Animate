@@ -29,8 +29,8 @@
 </div>
 <hr>
 <h4>Slide in and out 2</h4>
-<div>
-  <ul [@slideInOut2]='state4'>
+<div id="divSlide2" (click)='ondivSlide2Click()'>
+  <ul [@slideInOut2]='state4' (@slideInOut2.start)='onAnimStart($event)' (@slideInOut2.done)='onAnimDone($event)'>
     <li>Menu Item</li>
     <li>Menu Item</li>
     <li>Menu Item</li>
@@ -38,8 +38,8 @@
     <li>Menu Item</li>
     <li>Menu Item</li>
   </ul>
-  <button (click)='onSlideInOut2()'>Slide in and out</button>
 </div>
+<button (click)='onSlideInOut2()'>Slide in and out</button> state:{{state4}}
 <hr>
 <h4>Keyframes</h4>
 <div>

@@ -91,6 +91,9 @@ export class AppComponent {
   onSlideInOut2() {
     this.state4 = (this.state4 === 'in' ? 'out' : 'in');
   }
+  ondivSlide2Click() {
+    this.state4 = 'in';
+  }
   onKeyframes() {
     this.state5 = (this.state5 === 'in' ? 'out' : 'in');
   }
