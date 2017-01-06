@@ -1,68 +1,31 @@
 <h1>
   {{title}}
 </h1>
-<hr>
-<h4>Scale</h4>
-<button [@myTrigger]='state' (click)='onScaleClick()'>Scale Me</button>
-<hr>
-<h4>Void State - Slide and Fade in</h4>
-<div>
-  <ul>
-    <li [@myTrigger2]='state2' *ngFor="let item of items">{{item}}</li>
-  </ul>
-  <label for="txtAnother">add one here:</label>
-  <input [(ngModel)]='newOne' type="text">
-  <button (click)='onAddAnother()'>Add Another</button>
+
+<div class="row">
+  <aside class="sideBar" [@sideBarVisibility]="state" *ngIf="showMainSideMenu1">
+    <h4>1</h4>
+    <ul>
+      <li>One</li>
+      <li>Two</li>
+      <li>Three</li>
+      <li>Four</li>
+      <li>Five</li>
+    </ul>
+  </aside>
+  <aside class="sideBar" [@sideBarVisibility2]="state2" *ngIf="showMainSideMenu2">
+    <h4>2</h4>
+    <ul>
+      <li>Six</li>
+      <li>Seven</li>
+      <li>Eight</li>
+      <li>Nine</li>
+      <li>Ten</li>
+    </ul>
+  </aside>
 </div>
-<hr>
-<h4>Void Slide in and out</h4>
-<div>
-  <ul [@slideInOut]='state3'>
-    <li>Menu Item</li>
-    <li>Menu Item</li>
-    <li>Menu Item</li>
-    <li>Menu Item</li>
-    <li>Menu Item</li>
-    <li>Menu Item</li>
-  </ul>
-  <button (click)='onSlideInOut()'>Slide in and out</button>
-</div>
-<hr>
-<h4>Slide in and out 2</h4>
-<div id="divSlide2" (click)='ondivSlide2Click()'>
-  <ul [@slideInOut2]='state4' (@slideInOut2.start)='onAnimStart($event)' (@slideInOut2.done)='onAnimDone($event)'>
-    <li>Menu Item</li>
-    <li>Menu Item</li>
-    <li>Menu Item</li>
-    <li>Menu Item</li>
-    <li>Menu Item</li>
-    <li>Menu Item</li>
-  </ul>
-</div>
-<button (click)='onSlideInOut2()'>Slide in and out</button> state:{{state4}}
-<hr>
-<h4>Keyframes</h4>
-<div>
-  <ul [@keyframes]='state5'>
-    <li>Menu Item</li>
-    <li>Menu Item</li>
-    <li>Menu Item</li>
-    <li>Menu Item</li>
-    <li>Menu Item</li>
-    <li>Menu Item</li>
-  </ul>
-  <button (click)='onKeyframes()'>Slide in and out</button>
-</div>
-<hr>
-<h4>Event Binding</h4>
-<div>
-  <ul [@keyframes]='state5' (@keyframes.start)='onAnimStart($event)' (@keyframes.done)='onAnimDone($event)'>
-    <li>Menu Item</li>
-    <li>Menu Item</li>
-    <li>Menu Item</li>
-    <li>Menu Item</li>
-    <li>Menu Item</li>
-    <li>Menu Item</li>
-  </ul>
-  <button (click)='onKeyframes()'>Slide in and out</button>
-</div>
+<button (click)='onSlideInOut()'>Slide in and out</button>
+<br>
+"showMainSideMenu1:" {{showMainSideMenu1}}
+<br>
+"showMainSideMenu2:" {{showMainSideMenu2}}
